@@ -28,7 +28,10 @@ namespace TypescriptApp.WebApi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
-
+			services.AddSpaStaticFiles(configuration =>
+			{
+				configuration.RootPath = "Home/Index";
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,10 +44,19 @@ namespace TypescriptApp.WebApi
 
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
+			app.UseSpaStaticFiles();
+			app.UseSpa(spa =>
+			{
+				spa.Options.SourcePath = env.ContentRootPath;
 
+				if (env.IsDevelopment())
+				{
+					spa.UseReactDevelopmentServer(npmScript: "start");
+				}
+			});
+
+			app.UseRouting();
 			app.UseAuthorization();
-
-
 
 			app.UseEndpoints(endpoints =>
 			{
