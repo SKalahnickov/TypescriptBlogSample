@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypescriptApp.WebApi", "TypescriptApp.WebApi\TypescriptApp.WebApi.csproj", "{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {452E5996-D171-48CA-9F5D-AAC8C563FCD3}
+	EndGlobalSection
+EndGlobal

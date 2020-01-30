@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
+	  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="src\mainRouter.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\mainRouter.tsx" />
+  </ItemGroup>
+
+</Project>
