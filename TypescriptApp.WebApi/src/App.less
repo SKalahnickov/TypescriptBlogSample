@@ -1,2 +1,184 @@
-﻿body {
+﻿html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	color: #222;
+	height: 100%;
+	font-weight: 400;
+}
+
+#react-app {
+	height: 100%;
+}
+
+div, input, textarea, ul, li, table, th, td, h3, p {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0;
+	outline: none;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+.none {
+	display: none
+}
+
+.clearfix:after, .clearfix:before {
+	content: " ";
+	display: table
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.clearfix * {
+	zoom: 1
+}
+
+strong {
+	font-weight: 500;
+}
+
+.dis {
+	cursor: not-allowed;
+	opacity: .3;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-size: inherit;
+	font-weight: 500;
+	letter-spacing: .3pt;
+}
+
+h5 {
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 13px;
+	letter-spacing: .3pt;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+input, textarea, button, .combobox .popup, .checkbox, .radio {
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	padding: 7px;
+	font-size: 15px;
+	color: #222;
+	width: 100%;
+	font-family: Roboto, sans-serif;
+}
+
+input:disabled, textarea:disabled, button:disabled, .combobox:disabled .popup, .checkbox:disabled, .radio:disabled {
+	opacity: .6;
+	cursor: not-allowed !important;
+}
+
+input[type="text"], input[type="password"], textarea {
+
+	&:focus {
+		border: solid 1px #179fff;
+		box-shadow: inset 0 0 1px 1px #166299;
+	}
+}
+
+textarea {
+	line-height: 19px;
+}
+
+::-webkit-input-placeholder, ::-webkit-textarea-placeholder {
+	color: #888;
+	font-size: 15px;
+	font-weight: 300;
+	font-family: Roboto, sans-serif;
+	letter-spacing: .2pt;
+}
+
+.expander-glyph {
+	background: url(img/arrow-black.svg) no-repeat center;
+	background-size: 14px;
+	float: right;
+}
+
+.expander-glyph:hover {
+	background-size: 16px;
+}
+
+.expander-glyph.reverse {
+	transform: rotate(180deg);
+}
+
+.checkbox, .radio {
+	width: 17px;
+	height: 17px;
+	float: left;
+	margin-right: 8px;
+	border-radius: 1px;
+}
+
+.checkbox.checked {
+	background: url(img/checkbox-checked.svg) no-repeat center;
+	background-size: 13px;
+}
+
+.radio {
+	border-radius: 50%;
+}
+
+.radio.checked {
+	background: url(img/radio-checked.svg) no-repeat center;
+	background-size: 11px;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+	/* FF 4-18 */
+	color: transparent;
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-input-placeholder {
+	/* FF 19+ */
+	color: transparent;
+}
+
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+	/* IE 10+ */
+	color: transparent;
+}
+
+table {
+	width: 100%;
+	cursor: default;
+	margin-bottom: 30px;
+}
+
+th, td {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+th {
+	font-weight: 500;
+}
+
+td {
+	transition: all .2s;
 }
