@@ -28,6 +28,7 @@ namespace TypescriptApp.WebApi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.AddMvc(act => act.EnableEndpointRouting = false);
 			services.AddSpaStaticFiles(configuration =>
 			{
 				configuration.RootPath = "Home/Index";
@@ -45,6 +46,7 @@ namespace TypescriptApp.WebApi
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseSpaStaticFiles();
+			app.UseMvc();
 			app.UseSpa(spa =>
 			{
 				spa.Options.SourcePath = env.ContentRootPath;
@@ -55,6 +57,18 @@ namespace TypescriptApp.WebApi
 				}
 			});
 
+			app
+				.UseMvc()
+				.MapWhen(
+				context => !context.Request.Path.Value.StartsWith("/api"),
+				builder => builder
+					.UseMvc(routes =>
+					{
+						routes.MapSpaFallbackRoute(
+						name: "spa-fallback",
+						defaults: new { controller = "Home", action = "Index" });
+					})
+			);
 			app.UseRouting();
 			app.UseAuthorization();
 
