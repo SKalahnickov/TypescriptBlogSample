@@ -1,0 +1,31 @@
+﻿.nav-panel {
+	display: flex;
+	justify-content: center;
+	height: 100px;
+
+	a {
+		text-decoration: none;
+	}
+
+	li {
+		width: 150px;
+		padding: 10px;
+		margin: 5px;
+		font-size: 24px;
+		background-color: burlywood;
+		color: white;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 10px;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #9B8777;
+			transition-duration: 0.5s;
+		}
+
+		&.nav-active {
+			background-color: #9B8777;
+		}
+	}
+}

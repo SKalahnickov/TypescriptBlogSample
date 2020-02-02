@@ -1,7 +1,9 @@
 ﻿import * as React from 'react';
-import { RouteComponentProps, Switch, Route } from 'react-router';
+import './mainRouter.scss';
+import { RouteComponentProps, Switch, Route, Redirect } from 'react-router';
 import * as linq from 'linq';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
+import { PostsLoader } from './posts/PostsView';
 
 type IRoutingProps = {
 	linkName: string,
@@ -13,38 +15,54 @@ const staticRouting: IRoutingProps[] = [
 	{
 		link: '/posts',
 		linkName: 'Posts',
+		renderer: props => <PostsLoader redirect={props.history.push} />
+
 	},
 	{
 		link: '/tasks',
-		linkName: 'Tasks'
+		linkName: 'Tasks',
+		renderer: _ => <div>Tasks are comming soon</div>
 	},
 	{
 		link: '/friends',
-		linkName: 'Friends'
+		linkName: 'Friends',
+		renderer: _ => <div>Friends are almost released</div>
 	}
 ]
 
-function getNavPanel(props: IRoutingProps[]): JSX.Element {
-	return <ul className='nav-panel'>
-		{props.map(p => <li>
-			{p.linkName}
-		</li>)}
-	</ul>
-}
+function GetRouteRenderer(
+	allLinks: IRoutingProps[],
+	currentLink: string,
+	routeProps: RouteComponentProps<{}>
+) {
+	const link = allLinks.find(x => x.link === currentLink)!;
 
-function getRouting(props: IRoutingProps[]): JSX.Element {
-	return <BrowserRouter>
-		<Switch>
-		{props.map(x => <Route exact path={x.link} render={x.renderer} />)}
-		</Switch>
-	</BrowserRouter>
+	return <React.Fragment>
+		<ul className='nav-panel'>
+			{allLinks.map(p => <NavLink key={`nav-link_${p.link}`} to={p.link}><li
+				className={p.link === currentLink ? 'nav-active' : 'nav-inactive'}
+				>
+				{p.linkName}
+			</li></NavLink>)}
+		</ul>
+		{link.renderer === undefined
+			? null
+			: link.renderer(routeProps)}
+	</React.Fragment>
 }
-
 
 export function MainRouter() {
-
-	return <div className='layout'>
-		{getNavPanel(staticRouting)}
-		{getRouting(staticRouting)}
+	return <div className='navigation'>
+		<BrowserRouter>		
+			<Switch>
+				{staticRouting.map(x => <Route
+					path={x.link}
+					render={props => GetRouteRenderer(staticRouting, x.link, props)}
+					key={x.link}
+					exact
+				/>)}
+				<Route path="/" key="default" render={_ => <Redirect to={staticRouting[0].link} />} />
+			</Switch>
+		</BrowserRouter>
 	</div>
 }
