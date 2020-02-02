@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypescriptApp.WebApi", "TypescriptApp.WebApi\TypescriptApp.WebApi.csproj", "{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypescriptApp.WebApi", "TypescriptApp.WebApi\TypescriptApp.WebApi.csproj", "{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypescriptApp.DAL", "TypescriptApp.DAL\TypescriptApp.DAL.csproj", "{29FC869F-3082-4875-9EEC-833885A1EE88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypescriptApp.Logics", "TypescriptApp.Logics\TypescriptApp.Logics.csproj", "{68369F4C-23C2-48B2-AC2E-B609576C43B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DFA8871-12BB-46BB-9C64-F2DB4B84DB55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FC869F-3082-4875-9EEC-833885A1EE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FC869F-3082-4875-9EEC-833885A1EE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FC869F-3082-4875-9EEC-833885A1EE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FC869F-3082-4875-9EEC-833885A1EE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68369F4C-23C2-48B2-AC2E-B609576C43B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68369F4C-23C2-48B2-AC2E-B609576C43B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68369F4C-23C2-48B2-AC2E-B609576C43B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68369F4C-23C2-48B2-AC2E-B609576C43B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

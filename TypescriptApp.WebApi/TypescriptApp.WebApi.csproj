@@ -7,16 +7,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\loaders\loader.tsx" />
     <None Remove="src\mainRouter.tsx" />
+    <None Remove="src\posts\PostsView.tsx" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TypescriptApp.DAL\TypescriptApp.DAL.csproj" />
+    <ProjectReference Include="..\TypescriptApp.Logics\TypescriptApp.Logics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\loaders\loader.tsx" />
     <TypeScriptCompile Include="src\mainRouter.tsx" />
+    <TypeScriptCompile Include="src\posts\PostsView.tsx" />
   </ItemGroup>
 
 </Project>
