@@ -1,0 +1,76 @@
+﻿html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	color: #222;
+	height: 100%;
+	font-weight: 400;
+}
+
+#react-app {
+	height: 100%;
+}
+
+div, input, textarea, ul, li, table, th, td, h3, p {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0;
+	outline: none;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+.none {
+	display: none
+}
+
+table {
+	width: 100%;
+	cursor: default;
+	margin-bottom: 30px;
+}
+
+th, td {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+th {
+	font-weight: 500;
+}
+
+td {
+	transition: all .2s;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+.App {
+	height: 100%;
+	width: 100%;
+	background: url('imgs/wallpaper.jpg') repeat;
+}
+
+.content-container {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	max-width: 1280px;
+	min-width: 980px;
+	padding: 30px 10px;
+	-webkit-box-shadow: 2px 6px 48px -18px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 6px 48px -18px rgba(0,0,0,0.75);
+	box-shadow: 2px 6px 48px -18px rgba(0,0,0,0.75);
+	background-color: white;
+}
