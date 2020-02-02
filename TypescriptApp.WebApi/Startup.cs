@@ -8,10 +8,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TypescriptApp.DAL;
 
 namespace TypescriptApp.WebApi
 {
@@ -20,6 +22,9 @@ namespace TypescriptApp.WebApi
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
+			using var context = new BaseContext();
+			context.Database.Migrate();
+
 		}
 
 		public IConfiguration Configuration { get; }
@@ -50,7 +55,6 @@ namespace TypescriptApp.WebApi
 			app.UseSpa(spa =>
 			{
 				spa.Options.SourcePath = env.ContentRootPath;
-
 				if (env.IsDevelopment())
 				{
 					spa.UseReactDevelopmentServer(npmScript: "start");
@@ -71,11 +75,6 @@ namespace TypescriptApp.WebApi
 			);
 			app.UseRouting();
 			app.UseAuthorization();
-
-			app.UseEndpoints(endpoints =>
-			{
-				endpoints.MapControllers();
-			});
 		}
 	}
 }
